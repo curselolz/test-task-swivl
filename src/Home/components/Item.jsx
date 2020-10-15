@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
-import { format } from "date-fns";
-import { DateTime } from 'luxon'
 import { ContainerItem } from "styles";
 
 import * as actions from "Home/redux/actions";
@@ -31,8 +29,8 @@ const Item = ({ fetchCurrentUser, match, userInfo }) => {
     blog,
     bio,
   } = userInfo;
-  console.log(created_at);
-  // console.log(DateTime.utc().toString());
+  let dateFormat = new Date(created_at);
+  dateFormat = dateFormat.toLocaleString('en-US', { timeZone: 'Europe/Berlin' });
   return (
     <ContainerItem>
       <div>
@@ -42,7 +40,7 @@ const Item = ({ fetchCurrentUser, match, userInfo }) => {
         <p>Public name: {name}</p>
         <p>Followers: {followers}</p>
         <p>Following: {following}</p>
-        <p>Public created profile: {format(created_at, 'YYYY-MM-DD')}</p>
+        <p>Public created profile: {dateFormat}</p>
         <p>Company: {company || "no data"}</p>
         <p>E-mail: {email || "no data"}</p>
         <p>Location: {location}</p>

@@ -7,7 +7,7 @@ function configureStore() {
   const sagaMiddleware = createSagaMiddleware();
   
   /**
-   * Array of middleware
+   * Add new middleware here
    */
   const middlewares = [sagaMiddleware];
 

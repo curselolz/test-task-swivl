@@ -66,7 +66,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Item.propTypes = {
-  userInfo: PropTypes.object.isRequired,
+  fetchCurrentUser: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Item);

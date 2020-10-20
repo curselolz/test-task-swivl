@@ -1,4 +1,4 @@
-import Item from "Home/components/Item";
+import Item from "Home/components/Profile";
 import Home from "Home/components/Home";
 
 const routes = [

@@ -15,6 +15,5 @@ export const fetchAllUsers = () => {
    * @return {promise} A promise that call in saga
    */
 export const fetchCurrentUser = (username) => {
-  console.log(username);
   return api.get(`/${username}`);
 };
